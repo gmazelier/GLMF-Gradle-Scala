@@ -1,16 +1,21 @@
 apply plugin: 'scala'
 
 scalaVersion = '2.9.0-1'
+akkaVersion = '1.1.3'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
+    mavenCentral name: 'akka', urls: 'http://akka.io/repository/'
 }
 
 dependencies {
-	// Libraries needed to run the scala tools
-	scalaTools "org.scala-lang:scala-compiler:${scalaVersion}"
-	scalaTools "org.scala-lang:scala-library:${scalaVersion}"
+    scalaTools "org.scala-lang:scala-compiler:${scalaVersion}"
+    scalaTools "org.scala-lang:scala-library:${scalaVersion}"
 
-	// Libraries needed for scala api
-	compile "org.scala-lang:scala-library:${scalaVersion}"
+    testCompile "junit:junit:4.8.2"
+    testCompile "org.scalatest:scalatest_2.9.0:1.6.1"
+    testCompile "se.scalablesolutions.akka:akka-testkit:${akkaVersion}"
+
+    compile "org.scala-lang:scala-library:${scalaVersion}"
+    compile "se.scalablesolutions.akka:akka-actor:${akkaVersion}"
 }
