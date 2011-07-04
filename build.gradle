@@ -8,8 +8,6 @@ repositories {
 
 dependencies {
 	// Libraries needed to run the scala tools
-	//scalaTools group: 'org.scala-lang', name: 'scala-compiler', version: scalaVersion
-	//scalaTools group: 'org.scala-lang', name: 'scala-library', version: scalaVersion
 	scalaTools "org.scala-lang:scala-compiler:${scalaVersion}"
 	scalaTools "org.scala-lang:scala-library:${scalaVersion}"
 
